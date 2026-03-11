@@ -35,7 +35,7 @@ This outline moves from basic metadata filtering to complex data-flow and depend
 
 **Objective:** Find loops prone to DoS.
 
-* **Learning:** Identifying `node.type == NodeType.LOOP`.
+* **Learning:** Identifying dynamic loop size.
 * **Task:** Detect `for` loops that iterate over a dynamic array length (e.g., `users.length`).
 
 ### Level 4: Event Emission Tracking
@@ -59,7 +59,7 @@ This outline moves from basic metadata filtering to complex data-flow and depend
 **Objective:** Analyze low-level operations.
 
 * **Learning:** Iterating through `node.irs` (Intermediate Representation).
-* **Task:** Detect the use of the `SELFDESTRUCT` opcode, regardless of the variable names used in Solidity.
+* **Task:** Detect the use of the `SELFDESTRUCT` opcode(`SOLIDITY_CALL selfdestruct(address)` in slitherIR), regardless of the variable names used in Solidity.
 
 ### Level 7: Guard Rail Logic
 

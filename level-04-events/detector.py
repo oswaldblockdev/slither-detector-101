@@ -24,7 +24,7 @@ class EventEmissionDetector(AbstractDetector):
                 if func.view or func.pure or func.is_constructor:
                     continue
 
-                balance_writes = [v for v in func.state_variables_written if 'balance' in v.name.lower()]
+                balance_writes = [v for v in func.state_variables_written if 'balance' in v.name.lower()] # type: ignore
                 
                 if balance_writes:
                     has_event_call = False
